@@ -1,0 +1,82 @@
+/*Imposto la pagina*/
+body {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.container{
+    /*OMBRA*/
+    box-shadow: 0px 10px 50px rgb(1, 1, 1);
+}
+
+/*Ogni cubo*/
+.cubo {
+    /*Definisco lo spazio che occupa*/
+    width: 45vw;
+    height: 15vw;
+    position: relative;
+
+    /*Come ruota*/
+    transform-style: preserve-3d; /*per mantenere il 3d 
+                                    delle immagini ruotate*/
+    transition: all 0.5s ease;
+    transform: rotateY(0deg);
+}
+
+/*TRANSIZIONE DIFFERENTE*/
+.cubo:nth-of-type(2){
+    transition-delay: .025s;
+}
+
+.cubo:nth-of-type(3){
+    transition-delay: .042s;
+}
+
+/*FACCIE DIVISE*/
+.cubo:nth-of-type(2) .faccia{
+    background-position-y: 30vw;
+}
+
+.cubo:nth-of-type(3) .faccia{
+    background-position-y: 15vw;
+}
+
+
+/*Caratteristiche di ogni faccia del cubo*/
+.faccia {
+    transition: all 0.5s ease;
+
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute; /*Posizionare le immagini nello stesso punto*/
+}
+
+
+.front{
+    background-image: url("https://picsum.photos/id/127/1200");
+    transform: rotateY(0deg) translateZ(22.5vw);
+}
+.right{
+    background-image: url("https://picsum.photos/id/287/1200");
+    transform: rotateY(90deg) translateZ(22.5vw);
+}
+.back{
+    background-image: url("https://picsum.photos/id/247/1200");
+    transform: rotateY(180deg) translateZ(22.5vw);
+}
+.left{
+    background-image: url("https://picsum.photos/id/273/1200");
+    transform: rotateY(-90deg) translateZ(22.5vw);
+}
+
+.btn{
+    display: flex;
+    align-self: center;
+    background-color:rgba(236, 236, 236, 0.134);
+    width: 1.7vw;
+    border-style: none;
+    box-shadow: 0px 3px 10px rgb(0,0,0);
+}
